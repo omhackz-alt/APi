@@ -13,7 +13,7 @@
   }
 
   .container {
-    width: 800px;
+    width: 900px;
     margin: 20px auto;
     border: 1px solid #000;
     padding: 10px;
@@ -26,11 +26,6 @@
     margin-bottom: 10px;
   }
 
-  header h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-
   nav {
     margin: 10px 0;
     padding: 5px 0;
@@ -39,7 +34,7 @@
   }
 
   nav a {
-    margin: 0 10px;
+    margin: 0 8px;
     text-decoration: none;
     color: #000080;
   }
@@ -55,14 +50,26 @@
   }
 
   h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
     color: #000080;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 6px;
+  }
+
+  th {
+    background-color: #e0e0e0;
   }
 
   code {
     background: #eee;
-    padding: 3px 5px;
+    padding: 2px 5px;
   }
 
   footer {
@@ -72,7 +79,6 @@
     border-top: 2px solid #000;
     color: #555;
   }
-
 </style>
 </head>
 <body>
@@ -80,47 +86,76 @@
 <div class="container">
   <header>
     <h1>OmHackz-API</h1>
-    <p>Simple Public Utility APIs</p>
+    <p>Public Utility API Service</p>
   </header>
 
   <nav>
-    <a href="/">Home</a> |
-    <a href="/api/time">Time API</a> |
-    <a href="/api/date">Date API</a> |
-    <a href="/api/latency">Latency API</a>
+    <a href="/">Home</a>
+    <a href="/api/status">Status</a>
+    <a href="/api/time">Time</a>
+    <a href="/api/date">Date</a>
+    <a href="/api/geo">Geo</a>
+    <a href="/api/random">Random</a>
+    <a href="/api/uuid">UUID</a>
   </nav>
 
   <section>
-    <h2>Welcome</h2>
-    <p>This is the official <strong>OmHackz-API</strong> dashboard.</p>
-    <p>Below are the available APIs:</p>
-  </section>
+    <h2>API Endpoints</h2>
 
-  <section>
-    <h2>Available APIs</h2>
-    <ul>
-      <li>
-        <strong>Time API</strong><br>
-        Endpoint: <code>/api/time</code><br>
-        Returns current server time.
-      </li>
-      <br>
-      <li>
-        <strong>Date API</strong><br>
-        Endpoint: <code>/api/date</code><br>
-        Returns current server date.
-      </li>
-      <br>
-      <li>
-        <strong>Latency API</strong><br>
-        Endpoint: <code>/api/latency</code><br>
-        Returns server response latency.
-      </li>
-    </ul>
+    <table>
+      <tr>
+        <th>API</th>
+        <th>Endpoint</th>
+        <th>Description</th>
+      </tr>
+
+      <tr>
+        <td>Status API</td>
+        <td><code>/api/status</code></td>
+        <td>Check API health</td>
+      </tr>
+
+      <tr>
+        <td>Time API</td>
+        <td><code>/api/time?tz=Asia/Kolkata</code></td>
+        <td>Get current time (auto timezone detect)</td>
+      </tr>
+
+      <tr>
+        <td>Date API</td>
+        <td><code>/api/date?format=iso&add=5</code></td>
+        <td>Get formatted date & add days</td>
+      </tr>
+
+      <tr>
+        <td>Latency API</td>
+        <td><code>/api/latency</code></td>
+        <td>Measure server response speed</td>
+      </tr>
+
+      <tr>
+        <td>Geo API</td>
+        <td><code>/api/geo</code></td>
+        <td>Get IP location & timezone</td>
+      </tr>
+
+      <tr>
+        <td>Random API</td>
+        <td><code>/api/random?min=1&max=100</code></td>
+        <td>Generate random number</td>
+      </tr>
+
+      <tr>
+        <td>UUID API</td>
+        <td><code>/api/uuid</code></td>
+        <td>Generate unique ID</td>
+      </tr>
+
+    </table>
   </section>
 
   <footer>
-    © 2026 OmHackz — Public API Service
+    © 2026 OmHackz — Public API Infrastructure
   </footer>
 </div>
 
